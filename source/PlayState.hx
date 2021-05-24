@@ -115,6 +115,7 @@ class PlayState extends MusicBeatState
 	var talking:Bool = true;
 	var songScore:Int = 0;
 	var scoreTxt:FlxText;
+	var dialogBG:FlxSprite;
 
 	public static var campaignScore:Int = 0;
 
@@ -836,7 +837,7 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				case 'chilly-sleepy':
-					schoolIntro(doof);
+					sleepyIntro(doof);
 				case 'wake-down':
 					schoolIntro(doof);
 				case 'sinner-sleeper':
@@ -947,6 +948,18 @@ class PlayState extends MusicBeatState
 				remove(black);
 			}
 		});
+	}
+
+	public function sleepyIntro(?dialogueBox:DialogueBox):Void
+	{	
+
+		camFollow.setPosition((boyfriend.getMidpoint().x - 100), (boyfriend.getMidpoint().y - 100));
+		FlxTween.tween(FlxG.camera, {zoom: -1}, 0, {ease: FlxEase.quadInOut});
+		var dialogTransition:FlxSprite = new FlxSprite().loadGraphic(Paths.image('CUTSCENES/WEEK_1/transition'));
+		add(dialogTransition);
+		add(dialogueBox);
+		
+
 	}
 
 	var startTimer:FlxTimer;

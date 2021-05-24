@@ -33,6 +33,10 @@ class DialogueBox extends FlxSpriteGroup
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
+	var dialogTransition:FlxSprite;
+	var dialogBG:FlxSprite;
+	var curAnim:String = '';
+	var cutsceneImage:FlxSprite;
 
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
@@ -52,6 +56,11 @@ class DialogueBox extends FlxSpriteGroup
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
 		add(bgFade);
+
+		cutsceneImage = new FlxSprite(0, 0);
+		cutsceneImage.visible = false;
+		add(cutsceneImage);	
+
 
 		new FlxTimer().start(0.83, function(tmr:FlxTimer)
 		{
@@ -89,7 +98,7 @@ class DialogueBox extends FlxSpriteGroup
 				add(face);
 			case 'chilly-sleepy':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('Custom Dialogues/chilly-sleepy/dialogueBox-pixel');
+				box.frames = Paths.getSparrowAtlas('Custom Dialogues/chilly-sleepy/dialogueBox-normal');
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 
@@ -138,26 +147,26 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case ('senpai' | 'roses' | 'thorns'):
-		portraitLeft = new FlxSprite(-20, 40);
-		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-		portraitLeft.updateHitbox();
-		portraitLeft.scrollFactor.set();
-		add(portraitLeft);
-		portraitLeft.visible = false;
+				portraitLeft = new FlxSprite(-20, 40);
+				portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+				portraitLeft.updateHitbox();
+				portraitLeft.scrollFactor.set();
+				add(portraitLeft);
+				portraitLeft.visible = false;
 
 
-		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
-		case ('fekemy'):
-			portraitLeft = new FlxSprite(-20, 40);
+				portraitRight = new FlxSprite(0, 40);
+				portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+				portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
+				portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
+				portraitRight.updateHitbox();
+				portraitRight.scrollFactor.set();
+				add(portraitRight);
+				portraitRight.visible = false;
+			case ('fekemy'):
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/fekemy/senpaiPortrait');
 				//portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
@@ -176,8 +185,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'wake-down':
-			portraitLeft = new FlxSprite(-20, 40);
+			case 'wake-down':
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/wake-down/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
@@ -194,9 +203,9 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'chilly-sleepy':
-			portraitLeft = new FlxSprite(-20, 40);
-				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/chilly-sleepy/senpaiPortrait');
+			case 'chilly-sleepy':
+				portraitLeft = new FlxSprite(-20, 40);
+				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/chilly-sleepy/aergiePortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
 				portraitLeft.updateHitbox();
@@ -212,8 +221,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'sinner-sleeper':
-			portraitLeft = new FlxSprite(-20, 40);
+			case 'sinner-sleeper':
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/sinner-sleeper/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
@@ -230,8 +239,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'pop-scare':
-			portraitLeft = new FlxSprite(-20, 40);
+			case 'pop-scare':
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/pop-scare/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
@@ -248,8 +257,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'lusturious-lyrica':
-			portraitLeft = new FlxSprite(-20, 40);
+			case 'lusturious-lyrica':
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/lusturious-lyrica/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
@@ -266,8 +275,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.scrollFactor.set();
 				add(portraitRight);
 				portraitRight.visible = false;
-		case 'terminal-heartbeat':
-			portraitLeft = new FlxSprite(-20, 40);
+			case 'terminal-heartbeat':
+				portraitLeft = new FlxSprite(-20, 40);
 				portraitLeft.frames = Paths.getSparrowAtlas('Custom Dialogues/terminal-heartbeat/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
@@ -421,8 +430,57 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.visible = true;
 					portraitRight.animation.play('enter');
 				}
+
+			// case "effect":
+			// 	switch(curAnim){
+			// 		case "hidden":
+			// 			swagDialogue.visible = false;
+			// 			dropText.visible = false;
+			// 			box.visible = false;
+			// 			setDialogue = true;
+			// 			swagDialogue.resetText("");
+			// 		default:
+			// 			effectQue.push(curAnim);
+			// 			effectParamQue.push(dialogueList[0]);
+			// 			skipDialogue = true;
+			// 	}
+			case "bg":
+				switch(curAnim){
+					case "hide":
+						cutsceneImage.visible = false;
+					default:
+						cutsceneImage.visible = true;
+						cutsceneImage.loadGraphic(Paths.image("assets/dialogue/images/bg/" + curAnim + ".png"));
+				}
+			case "sound":
+				FlxG.sound.play(Paths.sound("assets/dialogue/sounds/" + curAnim + ".ogg"));
+			case "music":
+				switch(curAnim){
+					case "stop":
+						FlxG.sound.music.stop();
+					case "fadeIn":
+						FlxG.sound.music.fadeIn(1.5, 0, Std.parseFloat(dialogueList[0]));
+					case "fadeOut":
+						FlxG.sound.music.fadeOut(1.5, 0);
+					default:
+						FlxG.sound.playMusic(Paths.sound("assets/dialogue/music/" + curAnim + ".ogg"), Std.parseFloat(dialogueList[0]));
+				}
 		}
 	}
+
+	// if(!skipDialogue){
+	// 	if(!setDialogue){
+	// 		swagDialogue.resetText(dialogueList[0]);
+	// 	}
+
+	// 	swagDialogue.start(0.04, true);
+	// }
+	// else{
+
+	// 	dialogueList.remove(dialogueList[0]);
+	// 	startDialogue();
+		
+	// }
 
 	function cleanDialog():Void
 	{
@@ -430,4 +488,155 @@ class DialogueBox extends FlxSpriteGroup
 		curCharacter = splitName[1];
 		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
 	}
+
+	// function runEffectsQue(){
+	
+	// 	for(i in 0...effectQue.length){
+
+	// 		switch(effectQue[i]){
+
+	// 			case "fadeOut":
+	// 				effectFadeOut(Std.parseFloat(effectParamQue[i]));
+	// 			case "fadeIn":
+	// 				effectFadeIn(Std.parseFloat(effectParamQue[i]));
+	// 			case "exitStageLeft":
+	// 				effectExitStageLeft(Std.parseFloat(effectParamQue[i]));
+	// 			case "exitStageRight":
+	// 				effectExitStageRight(Std.parseFloat(effectParamQue[i]));
+	// 			case "enterStageLeft":
+	// 				effectEnterStageLeft(Std.parseFloat(effectParamQue[i]));
+	// 			case "enterStageRight":
+	// 				effectEnterStageRight(Std.parseFloat(effectParamQue[i]));
+	// 			case "rightSide":
+	// 				effectFlipRight();
+	// 			case "flip":
+	// 				effectFlipDirection();
+	// 			case "toLeft":
+	// 				effectToLeft();
+	// 			case "toRight":
+	// 				effectToRight();
+	// 			//case "shake":
+	// 				//effectShake(Std.parseFloat(effectParamQue[i]));
+	// 			default:
+
+	// 		}
+
+	// 	}
+
+	// 	effectQue = [""];
+	// 	effectParamQue = [""];
+
+	// }
+
+	// function hideAll():Void{
+	// 	portraitBF.hide();
+	// 	portraitGF.hide();
+	// 	portraitDAD.hide();
+	// 	portraitSPOOKY.hide();
+	// 	portraitMONSTER.hide();
+	// 	portraitPICO.hide();
+	// }
+
+	// function effectFadeOut(?time:Float = 1):Void{
+	// 	portraitBF.effectFadeOut(time);
+	// 	portraitGF.effectFadeOut(time);
+	// 	portraitDAD.effectFadeOut(time);
+	// 	portraitSPOOKY.effectFadeOut(time);
+	// 	portraitMONSTER.effectFadeOut(time);
+	// 	portraitPICO.effectFadeOut(time);
+	// }
+
+	// function effectFadeIn(?time:Float = 1):Void{
+	// 	portraitBF.effectFadeIn(time);
+	// 	portraitGF.effectFadeIn(time);
+	// 	portraitDAD.effectFadeIn(time);
+	// 	portraitSPOOKY.effectFadeIn(time);
+	// 	portraitMONSTER.effectFadeIn(time);
+	// 	portraitPICO.effectFadeIn(time);
+	// }
+
+	// function effectExitStageLeft(?time:Float = 1):Void{
+	// 	portraitBF.effectExitStageLeft(time);
+	// 	portraitGF.effectExitStageLeft(time);
+	// 	portraitDAD.effectExitStageLeft(time);
+	// 	portraitSPOOKY.effectExitStageLeft(time);
+	// 	portraitMONSTER.effectExitStageLeft(time);
+	// 	portraitPICO.effectExitStageLeft(time);
+	// }
+
+	// function effectExitStageRight(?time:Float = 1):Void{
+	// 	portraitBF.effectExitStageRight(time);
+	// 	portraitGF.effectExitStageRight(time);
+	// 	portraitDAD.effectExitStageRight(time);
+	// 	portraitSPOOKY.effectExitStageRight(time);
+	// 	portraitMONSTER.effectExitStageRight(time);
+	// 	portraitPICO.effectExitStageRight(time);
+	// }
+
+	// function effectFlipRight(){
+	// 	portraitBF.effectFlipRight();
+	// 	portraitGF.effectFlipRight();
+	// 	portraitDAD.effectFlipRight();
+	// 	portraitSPOOKY.effectFlipRight();
+	// 	portraitMONSTER.effectFlipRight();
+	// 	portraitPICO.effectFlipRight();
+	// 	box.flipX = false;
+	// }
+	
+	// function effectFlipDirection(){
+	// 	portraitBF.effectFlipDirection();
+	// 	portraitGF.effectFlipDirection();
+	// 	portraitDAD.effectFlipDirection();
+	// 	portraitSPOOKY.effectFlipDirection();
+	// 	portraitMONSTER.effectFlipDirection();
+	// 	portraitPICO.effectFlipDirection();
+	// }
+
+	// function effectEnterStageLeft(?time:Float = 1){
+	// 	portraitBF.effectEnterStageLeft(time);
+	// 	portraitGF.effectEnterStageLeft(time);
+	// 	portraitDAD.effectEnterStageLeft(time);
+	// 	portraitSPOOKY.effectEnterStageLeft(time);
+	// 	portraitMONSTER.effectEnterStageLeft(time);
+	// 	portraitPICO.effectEnterStageLeft(time);
+	// }
+
+	// function effectEnterStageRight(?time:Float = 1){
+	// 	portraitBF.effectEnterStageRight(time);
+	// 	portraitGF.effectEnterStageRight(time);
+	// 	portraitDAD.effectEnterStageRight(time);
+	// 	portraitSPOOKY.effectEnterStageRight(time);
+	// 	portraitMONSTER.effectEnterStageRight(time);
+	// 	portraitPICO.effectEnterStageRight(time);
+	// }
+
+	// function effectToRight(?time:Float = 1){
+	// 	portraitBF.effectToRight(time);
+	// 	portraitGF.effectToRight(time);
+	// 	portraitDAD.effectToRight(time);
+	// 	portraitSPOOKY.effectToRight(time);
+	// 	portraitMONSTER.effectToRight(time);
+	// 	portraitPICO.effectToRight(time);
+	// 	box.flipX = false;
+	// }
+
+	// function effectToLeft(?time:Float = 1){
+	// 	portraitBF.effectToLeft(time);
+	// 	portraitGF.effectToLeft(time);
+	// 	portraitDAD.effectToLeft(time);
+	// 	portraitSPOOKY.effectToLeft(time);
+	// 	portraitMONSTER.effectToLeft(time);
+	// 	portraitPICO.effectToLeft(time);
+	// }
+
+	/*function effectShake(?time:Float = 0.5){
+		portraitBF.effectShake(time);
+		portraitGF.effectShake(time);
+		portraitDAD.effectShake(time);
+		portraitSPOOKY.effectShake(time);
+		portraitMONSTER.effectShake(time);
+		portraitPICO.effectShake(time);
+		portraitDARNELL.effectShake(time);
+		portraitNENE.effectShake(time);
+	}*/
 }
