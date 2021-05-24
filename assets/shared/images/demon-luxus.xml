@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Hard.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Lust Hard IDLE0000" x="0" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0001" x="600" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0002" x="1200" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0003" x="1800" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0004" x="2400" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0005" x="3000" y="0" width="600" height="600"/>
+	<SubTexture name="Lust Hard IDLE0006" x="0" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingDOWN0000" x="600" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingDOWN0001" x="1200" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingDOWN0002" x="1800" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingLEFT0000" x="2400" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingLEFT0001" x="3000" y="600" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingLEFT0002" x="0" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingRIGHT0000" x="600" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingRIGHT0001" x="1200" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingRIGHT0002" x="1800" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingUP0000" x="2400" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingUP0001" x="3000" y="1200" width="600" height="600"/>
+	<SubTexture name="Lust Hard SingUP0002" x="0" y="1800" width="600" height="600"/>
+</TextureAtlas>
