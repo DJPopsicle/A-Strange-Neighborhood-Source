@@ -6,9 +6,9 @@ name: Build
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -51,6 +51,7 @@ jobs:
           haxelib install hxcpp-debug-server
           haxelib install actuate
           haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
+          haxelib git polymod https://github.com/larsiusprime/polymod.git
           haxelib list
       - name: Compile
         run: haxelib run lime build linux --app-version="4.0.0-${{ github.run_id}}"
@@ -91,6 +92,7 @@ jobs:
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+          haxelib git polymod https://github.com/larsiusprime/polymod.git
           haxelib install hxcpp-debug-server
           haxelib install actuate
           haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
@@ -136,6 +138,7 @@ jobs:
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+          haxelib git polymod https://github.com/larsiusprime/polymod.git
           haxelib install hxcpp-debug-server
           haxelib install actuate
           haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
