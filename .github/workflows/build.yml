@@ -49,6 +49,8 @@ jobs:
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib install hxcpp-debug-server
+          haxelib install actuate
+          haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
           haxelib list
       - name: Compile
         run: haxelib run lime build linux --app-version="4.0.0-${{ github.run_id}}"
@@ -90,6 +92,9 @@ jobs:
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib install hxcpp-debug-server
+          haxelib install actuate
+          haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
+          lime rebuild extension-webm windows
           haxelib list
         shell: cmd
       - name: Compile
@@ -132,6 +137,8 @@ jobs:
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib install hxcpp-debug-server
+          haxelib install actuate
+          haxelib git extension-webm https://github.com/GrowtopiaFli/extension-webm
           haxelib list
       - name: Compile
         run: haxelib run lime build mac --app-version="4.0.0-${{ github.run_id}}"
