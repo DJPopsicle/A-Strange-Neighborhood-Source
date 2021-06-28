@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="aergiePortrait.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="aergiePortrait0000" x="0" y="0" width="68" height="55" pivotX="541.35" pivotY="163.9" frameX="0" frameY="-89" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0001" x="68" y="0" width="69" height="55" frameX="0" frameY="-89" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0002" x="137" y="0" width="70" height="56" frameX="-1" frameY="-89" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0003" x="207" y="0" width="73" height="59" frameX="-1" frameY="-88" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0004" x="280" y="0" width="77" height="62" frameX="-2" frameY="-86" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0005" x="357" y="0" width="81" height="66" frameX="-3" frameY="-85" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0006" x="438" y="0" width="86" height="71" frameX="-5" frameY="-83" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0007" x="524" y="0" width="94" height="75" frameX="-6" frameY="-82" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0008" x="618" y="0" width="102" height="81" frameX="-8" frameY="-80" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0009" x="720" y="0" width="111" height="89" frameX="-10" frameY="-76" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0010" x="831" y="0" width="120" height="97" frameX="-13" frameY="-72" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0011" x="951" y="0" width="130" height="106" frameX="-15" frameY="-68" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0012" x="1081" y="0" width="142" height="115" frameX="-17" frameY="-63" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0013" x="1223" y="0" width="154" height="125" frameX="-18" frameY="-58" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0014" x="1377" y="0" width="168" height="134" frameX="-19" frameY="-53" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0015" x="1545" y="0" width="181" height="144" frameX="-20" frameY="-48" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0016" x="1726" y="0" width="194" height="155" frameX="-21" frameY="-42" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0017" x="1920" y="0" width="207" height="163" frameX="-22" frameY="-38" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0018" x="2127" y="0" width="219" height="172" frameX="-23" frameY="-33" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0019" x="2346" y="0" width="231" height="179" frameX="-24" frameY="-29" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0020" x="2577" y="0" width="242" height="188" frameX="-25" frameY="-24" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0021" x="2819" y="0" width="251" height="194" frameX="-26" frameY="-21" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0022" x="3070" y="0" width="261" height="202" frameX="-26" frameY="-16" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0023" x="3331" y="0" width="269" height="208" frameX="-27" frameY="-12" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0024" x="3600" y="0" width="276" height="215" frameX="-28" frameY="-8" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0025" x="3876" y="0" width="283" height="221" frameX="-28" frameY="-5" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0026" x="4159" y="0" width="287" height="225" frameX="-29" frameY="-3" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0027" x="4446" y="0" width="291" height="228" frameX="-29" frameY="-1" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0028" x="4737" y="0" width="294" height="230" frameX="-29" frameY="0" frameWidth="324" frameHeight="231"/>
+	<SubTexture name="aergiePortrait0029" x="5031" y="0" width="295" height="231" frameX="-100" frameY="-150" frameWidth="324" frameHeight="231"/>
+</TextureAtlas>

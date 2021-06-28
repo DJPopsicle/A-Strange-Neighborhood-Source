@@ -1,0 +1,54 @@
+:bg:pre1
+:narrator:This is the story of a very beautiful woman, who lived in a dark forest far away from humans.
+:fadeOut:sine
+:narrator:
+:bg:pre2
+:fadeIn:sine
+:narrator:
+:narrator:Her mansion was huge, and dated back several centuries.
+:narrator: She loved it like a member of her family, and promised to herself she'd keep it forever.
+:fadeOut:sine
+:narrator:
+:bg:pre3
+:fadeIn:sine
+:narrator:
+:narrator:She was desired. Everyone wanted this beautiful creature.
+:fadeOut:sine
+:narrator:
+:bg:pre4
+:fadeIn:sine
+:narrator:
+:narrator:But they didn't know she was married to the black wolf, the most feared wolf in the valley.
+:fadeOut:sine
+:narrator:
+:bg:pre5
+:fadeIn:sine
+:narrator:
+:narrator:The two were sealed with undying love, and symbolized it by planting a majestic apple tree.
+:fadeOut:sine
+:narrator:
+:bg:pre6
+:fadeIn:sine
+:narrator:
+:narrator:Everything was going well in their life, when six golden apples sprouted on the apple tree. 
+:narrator:A sign of god? A mirage? The only thing the two knew was that it had to be taken care of.
+:fadeOut:sine
+:narrator:
+:bg:pre7
+:fadeIn:sine
+:narrator:
+:narrator:But one day, the woman found a mirror, and found herself so beautiful that she forgot the world around her. The apple began to wilt.
+:fadeOut:sine
+:narrator:
+:bg:pre8
+:fadeIn:sine
+:narrator:
+:narrator:Out of anger or despair, the wolf devoured his wife, and the six apples.
+:fadeOut:sine
+:narrator:
+:bg:pre9
+:fadeIn:sine
+:narrator:
+:narrator:When he thought he was alone, someone knocked on the door. The white wolves caught him and slaughtered him.
+:fadeOut:sine
+:narrator:
